@@ -33,6 +33,9 @@ public class Feira {
 	@Column(name = "distrito")
 	private String nomeDistrito;
 	
+	@Column(name = "cod_sub_prefeitura")
+	private Integer codigoSubPrefeitura;
+	
 	@Column(name = "sub_prefeitura")
 	private String subPrefeitura;
 	
@@ -76,7 +79,7 @@ public class Feira {
 		this.longitude = longitude;
 	}
 
-	public Long getLatitude() {
+	public Long geStringtLatitude() {
 		return latitude;
 	}
 
@@ -114,6 +117,14 @@ public class Feira {
 
 	public void setNomeDistrito(String nomeDistrito) {
 		this.nomeDistrito = nomeDistrito;
+	}
+
+	public Integer getCodigoSubPrefeitura() {
+		return codigoSubPrefeitura;
+	}
+
+	public void setCodigoSubPrefeitura(Integer codigoSubPrefeitura) {
+		this.codigoSubPrefeitura = codigoSubPrefeitura;
 	}
 
 	public String getSubPrefeitura() {
