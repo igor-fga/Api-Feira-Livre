@@ -6,7 +6,9 @@ import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +20,6 @@ import br.gov.sp.prefeitura.feira.entity.Feira;
 import br.gov.sp.prefeitura.feira.service.FeiraService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-
 
 @RestController
 @RequestMapping("/feiras-livres")
@@ -36,7 +37,7 @@ public class FeiraController {
 	public List<Feira> findAll(@RequestParam String nomeFeira) throws Exception {
 		return service.getByNomeFeira(nomeFeira);
 	}
-	
+
 	@ApiOperation(value = "Cria uma nova feira livre")
 	@PostMapping
 	public ResponseEntity<Object> create(@RequestBody FeiraCreateAndUpdateDTO feira) {
@@ -49,6 +50,16 @@ public class FeiraController {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 	}
-	
+
+	@ApiOperation(value = "Deleta uma feira livre")
+	@DeleteMapping("{id}")
+	public ResponseEntity<Object> delete(@PathVariable Long id) {
+		try {
+			service.delete(id);
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+	}
 
 }
