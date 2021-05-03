@@ -29,12 +29,12 @@ public class FeiraApplication implements CommandLineRunner {
 		feira.setSetCens(355030885000091L);
 		feira.setAreaPopulacao(3550308005040L);
 		feira.setCodigoDistrito(87);
-		feira.setNomeDistrito("VILA FORMOSA");
+		feira.setNomeDistrito("VILA FEIA");
 		feira.setCodigoSubPrefeitura(26);
 		feira.setSubPrefeitura("ARICANDUVA-FORMOSA-CARRAO");
 		feira.setRegiao05("Leste");
 		feira.setRegiao08("Leste 1");
-		feira.setNomeFeira("VILA FORMOSA");
+		feira.setNomeFeira("VILA FEIA");
 		feira.setRegistro("4041-0");
 		feira.setLogradouro("RUA MARAGOJIPE");
 		feira.setNumeroLogradouro("S/N");
@@ -62,6 +62,9 @@ public class FeiraApplication implements CommandLineRunner {
 		feiraDto.setReferencia("TV RUA AGUIA DE HAIA");
 		
 		service.update(feiraDto, 1L);
+		
+		//List<Feira> feiras = service.getByNomeFeira("VILA FEIA");
+		
 
 	}
 

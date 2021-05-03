@@ -1,5 +1,7 @@
 package br.gov.sp.prefeitura.feira.service;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -47,6 +49,19 @@ public class FeiraService {
 			feiraDb.setReferencia(feira.getReferencia());
 
 			return repository.save(feiraDb);
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+	}
+
+	public List<Feira> getByNomeFeira(String nomeFeira) throws Exception {
+		try {
+			List<Feira> feira = repository.findByNomeFeira(nomeFeira);
+			if (!feira.isEmpty()) {
+				return feira;
+			} else {
+				throw new Exception("Feira não encontrada!");
+			}
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}

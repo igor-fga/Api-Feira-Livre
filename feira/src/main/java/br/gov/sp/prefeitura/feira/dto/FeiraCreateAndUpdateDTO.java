@@ -160,5 +160,17 @@ public class FeiraCreateAndUpdateDTO {
 
 	public void setReferencia(String referencia) {
 		this.referencia = referencia;
-	}	
+	}
+
+	@Override
+	public String toString() {
+		return "FeiraCreateAndUpdateDTO [longitude=" + longitude + ", latitude=" + latitude + ", setCens=" + setCens
+				+ ", areaPopulacao=" + areaPopulacao + ", codigoDistrito=" + codigoDistrito + ", nomeDistrito="
+				+ nomeDistrito + ", codigoSubPrefeitura=" + codigoSubPrefeitura + ", subPrefeitura=" + subPrefeitura
+				+ ", regiao05=" + regiao05 + ", regiao08=" + regiao08 + ", nomeFeira=" + nomeFeira + ", registro="
+				+ registro + ", logradouro=" + logradouro + ", numeroLogradouro=" + numeroLogradouro + ", bairro="
+				+ bairro + ", referencia=" + referencia + "]";
+	}
+	
+	
 }
