@@ -34,7 +34,7 @@ public class FeiraApplication implements CommandLineRunner {
 		feira.setSubPrefeitura("ARICANDUVA-FORMOSA-CARRAO");
 		feira.setRegiao05("Leste");
 		feira.setRegiao08("Leste 1");
-		feira.setNomeFeira("VILA FEIA");
+		feira.setNomeFeira("VILA TOP");
 		feira.setRegistro("4041-0");
 		feira.setLogradouro("RUA MARAGOJIPE");
 		feira.setNumeroLogradouro("S/N");
@@ -61,11 +61,11 @@ public class FeiraApplication implements CommandLineRunner {
 		feiraDto.setBairro("VL FORMOSA");
 		feiraDto.setReferencia("TV RUA AGUIA DE HAIA");
 		
-		service.update(feiraDto, 1L);
+		//service.update(feiraDto, 1L);
 		
 		//List<Feira> feiras = service.getByNomeFeira("VILA FEIA");
 		
-		service.delete(1L);
+		//service.delete(1L);
 
 	}
 
