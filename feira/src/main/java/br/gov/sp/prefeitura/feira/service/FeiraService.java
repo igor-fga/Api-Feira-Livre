@@ -66,6 +66,14 @@ public class FeiraService {
 			throw new Exception(e.getMessage());
 		}
 	}
+	
+	public void delete(Long id) throws Exception {
+		try {
+			repository.deleteById(id);
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+	}
 
 	public Feira getById(Long id) {
 		return repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));

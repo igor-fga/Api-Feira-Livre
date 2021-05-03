@@ -65,6 +65,7 @@ public class FeiraApplication implements CommandLineRunner {
 		
 		//List<Feira> feiras = service.getByNomeFeira("VILA FEIA");
 		
+		service.delete(1L);
 
 	}
 
