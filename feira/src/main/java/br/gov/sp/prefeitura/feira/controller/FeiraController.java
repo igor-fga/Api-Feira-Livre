@@ -1,5 +1,6 @@
 package br.gov.sp.prefeitura.feira.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,8 +36,14 @@ public class FeiraController {
 
 	@ApiOperation(value = "Lista feiras livres por nome")
 	@GetMapping
-	public List<Feira> findAll(@RequestParam String nomeFeira) throws Exception {
-		return service.getByNomeFeira(nomeFeira);
+	public ResponseEntity<List<Feira>> findAll(@RequestParam String nomeFeira) throws Exception {
+		try {
+			 List<Feira> feiras = service.getByNomeFeira(nomeFeira);
+			 return new ResponseEntity<>(feiras, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(new ArrayList<>(), HttpStatus.UNPROCESSABLE_ENTITY);
+		}
+		
 	}
 
 	@ApiOperation(value = "Cria uma nova feira livre")
@@ -57,6 +65,17 @@ public class FeiraController {
 		try {
 			service.delete(id);
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@ApiOperation(value = "Atualiza uma feira livre")
+	@PatchMapping("{id}")
+	public ResponseEntity<Feira> update(@PathVariable Long id, @RequestBody FeiraCreateAndUpdateDTO feira) {
+		try {
+			Feira feiraDb = service.update(feira, id);
+			return new ResponseEntity<>(feiraDb, HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
