@@ -5,7 +5,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import br.gov.sp.prefeitura.feira.dto.FeiraCreateAndUpdateDTO;
-import br.gov.sp.prefeitura.feira.entity.Feira;
 import br.gov.sp.prefeitura.feira.service.FeiraService;
 
 @SpringBootApplication
@@ -23,13 +22,13 @@ public class FeiraApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Feira feira = new Feira();
+		FeiraCreateAndUpdateDTO feira = new FeiraCreateAndUpdateDTO();
 		feira.setLongitude(-46550164L);
 		feira.setLatitude(-23558733L);
 		feira.setSetCens(355030885000091L);
 		feira.setAreaPopulacao(3550308005040L);
 		feira.setCodigoDistrito(87);
-		feira.setNomeDistrito("VILA FEIA");
+		feira.setNomeDistrito("VILA CARRÃO");
 		feira.setCodigoSubPrefeitura(26);
 		feira.setSubPrefeitura("ARICANDUVA-FORMOSA-CARRAO");
 		feira.setRegiao05("Leste");

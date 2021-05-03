@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import br.gov.sp.prefeitura.feira.dto.FeiraCreateAndUpdateDTO;
+
 @Entity
 @Table(name = "tb_feira")
 public class Feira {
@@ -29,39 +31,62 @@ public class Feira {
 
 	@Column(name = "cod_distrito")
 	private Integer codigoDistrito;
-	
+
 	@Column(name = "distrito")
 	private String nomeDistrito;
-	
+
 	@Column(name = "cod_sub_prefeitura")
 	private Integer codigoSubPrefeitura;
-	
+
 	@Column(name = "sub_prefeitura")
 	private String subPrefeitura;
-	
+
 	@Column(name = "regiao_5")
 	private String regiao05;
-	
+
 	@Column(name = "regiao_8")
 	private String regiao08;
-	
+
 	@Column(name = "feira")
 	private String nomeFeira;
-	
+
 	@Column(name = "registro")
 	private String registro;
-	
+
 	@Column(name = "logradouro")
 	private String logradouro;
-	
+
 	@Column(name = "num_logra")
 	private String numeroLogradouro;
-	
+
 	@Column(name = "bairro")
 	private String bairro;
-	
+
 	@Column(name = "referencia")
 	private String referencia;
+
+	public Feira() {
+	}
+
+	public Feira(FeiraCreateAndUpdateDTO feira) {
+		super();
+		this.longitude = feira.getLongitude();
+		this.latitude = feira.getLatitude();
+		this.setCens = feira.getSetCens();
+		this.areaPopulacao = feira.getAreaPopulacao();
+		this.codigoDistrito = feira.getCodigoDistrito();
+		this.nomeDistrito = feira.getNomeDistrito();
+		this.codigoSubPrefeitura = feira.getCodigoSubPrefeitura();
+		this.subPrefeitura = feira.getSubPrefeitura();
+		this.regiao05 = feira.getRegiao05();
+		this.regiao08 = feira.getRegiao08();
+		this.nomeFeira = feira.getNomeFeira();
+		this.registro = feira.getRegistro();
+		this.logradouro = feira.getLogradouro();
+		this.numeroLogradouro = feira.getNumeroLogradouro();
+		this.bairro = feira.getBairro();
+		this.referencia = feira.getReferencia();
+	}
 
 	public Long getId() {
 		return id;
@@ -197,5 +222,5 @@ public class Feira {
 
 	public void setReferencia(String referencia) {
 		this.referencia = referencia;
-	}	
+	}
 }

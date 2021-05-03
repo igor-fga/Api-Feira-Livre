@@ -19,9 +19,10 @@ public class FeiraService {
 		this.repository = repository;
 	}
 
-	public Long create(Feira feira) throws Exception {
-
+	public Long create(FeiraCreateAndUpdateDTO feiraDto) throws Exception {
+			
 		try {
+			Feira feira = new Feira(feiraDto);
 			return repository.save(feira).getId();
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
