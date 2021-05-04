@@ -1,0 +1,690 @@
+{
+	"info": {
+		"_postman_id": "48f05b67-fb3a-4a37-8e9d-c2dab80a9f3e",
+		"name": "Api - Feira Livre",
+		"description": "Api para CRUD de feiras livres da cidade de São Paulo.\n\nContact Support:\n Name: Igor Andrade\n Email: ifgandrade@gmail.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "feiras-livres",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Deleta uma feira livre",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/feiras-livres/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"feiras-livres",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/feiras-livres/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"feiras-livres",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/feiras-livres/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"feiras-livres",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/feiras-livres/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"feiras-livres",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/feiras-livres/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"feiras-livres",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Atualiza uma feira livre",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"areaPopulacao\": \"<long>\",\n    \"bairro\": \"<string>\",\n    \"codigoDistrito\": \"<integer>\",\n    \"codigoSubPrefeitura\": \"<integer>\",\n    \"latitude\": \"<long>\",\n    \"logradouro\": \"<string>\",\n    \"longitude\": \"<long>\",\n    \"nomeDistrito\": \"<string>\",\n    \"nomeFeira\": \"<string>\",\n    \"numeroLogradouro\": \"<string>\",\n    \"referencia\": \"<string>\",\n    \"regiao05\": \"<string>\",\n    \"regiao08\": \"<string>\",\n    \"registro\": \"<string>\",\n    \"setCens\": \"<long>\",\n    \"subPrefeitura\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/feiras-livres/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"feiras-livres",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/feiras-livres/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"feiras-livres",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/feiras-livres/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"feiras-livres",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/feiras-livres/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"feiras-livres",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/feiras-livres/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"feiras-livres",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Lista feiras livres por nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/feiras-livres?nomeFeira=Formosa",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"feiras-livres"
+							],
+							"query": [
+								{
+									"key": "nomeFeira",
+									"value": "Formosa",
+									"description": "(Required) nomeFeira"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/feiras-livres?nomeFeira=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"feiras-livres"
+									],
+									"query": [
+										{
+											"key": "nomeFeira",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/feiras-livres?nomeFeira=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"feiras-livres"
+									],
+									"query": [
+										{
+											"key": "nomeFeira",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/feiras-livres?nomeFeira=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"feiras-livres"
+									],
+									"query": [
+										{
+											"key": "nomeFeira",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/feiras-livres?nomeFeira=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"feiras-livres"
+									],
+									"query": [
+										{
+											"key": "nomeFeira",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Cria uma nova feira livre",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"areaPopulacao\": \"10000\",\n    \"bairro\": \"Jd. Vila Formosa\",\n    \"codigoDistrito\": \"10\",\n    \"codigoSubPrefeitura\": \"15\",\n    \"latitude\": \"1202020\",\n    \"logradouro\": \"Rua Afonso Pena\",\n    \"longitude\": \"1010101\",\n    \"nomeDistrito\": \"Leste\",\n    \"nomeFeira\": \"Formosa\",\n    \"numeroLogradouro\": \"164\",\n    \"referencia\": \"Longe\",\n    \"regiao05\": \"Leste x\",\n    \"regiao08\": \"Leste Y\",\n    \"registro\": \"10\",\n    \"setCens\": \"100\",\n    \"subPrefeitura\": \"Vila Formosa\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/feiras-livres",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"feiras-livres"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/feiras-livres",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"feiras-livres"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/feiras-livres",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"feiras-livres"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/feiras-livres",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"feiras-livres"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/feiras-livres",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"feiras-livres"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/feiras-livres",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"feiras-livres"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:8080"
+		}
+	]
+}
