@@ -39,6 +39,8 @@ Esse projeto tem como objetivo criação, edição, busca e deleção de feiras 
   
   6- Os serviços podem ser testados utilizando o swagger no endereço *http://localhost:8080/swagger-ui/index.html*
   
+  7 - O serviço também pode ser testado pela collection do postman **Api - Feira Livre.postman_collection.json** diponível na pasta raiz do projeto.
+  
  ---
  
 ## Logs da API
