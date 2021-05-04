@@ -43,4 +43,4 @@ Esse projeto tem como objetivo criação, edição, busca e deleção de feiras 
  
 ## Logs da API
 
-- Na raiz da pasta do projeto **ApiFeiraLivre** é gravado os logs no arquivo **Feira-livre-log.txt**.
+- Na pasta raiz do projeto **ApiFeiraLivre** é gravado os logs no arquivo **Feira-livre-log.txt**.
