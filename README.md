@@ -20,7 +20,7 @@ Projeto para cadastro de feiras livres da cidade de São Paulo
 
 ---
 
-### 1) Instalação e execução do projeto Api
+## Instalação e execução do projeto Api
 Esse projeto tem como objetivo criação, edição, busca e deleção de feiras livres.
 
 - Importar o projeto (Ex. Eclipse)
@@ -38,3 +38,9 @@ Esse projeto tem como objetivo criação, edição, busca e deleção de feiras 
   5- Entre no Package **br.gov.sp.prefeitura.feira** e clique na classe Java **FeiraApplication** e clique em **Run**.
   
   6- Os serviços podem ser testados utilizando o swagger no endereço *http://localhost:8080/swagger-ui/index.html*
+  
+ ---
+ 
+## Logs da API
+
+- Na raiz da pasta do projeto **ApiFeiraLivre** é gravado os logs no arquivo **Feira-livre-log.txt**.
