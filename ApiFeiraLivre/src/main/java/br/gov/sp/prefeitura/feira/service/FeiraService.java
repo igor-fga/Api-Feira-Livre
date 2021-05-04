@@ -2,6 +2,8 @@ package br.gov.sp.prefeitura.feira.service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -13,6 +15,8 @@ import br.gov.sp.prefeitura.feira.repository.FeiraRepository;
 @Service
 public class FeiraService {
 
+	private static final Logger LOG = LoggerFactory.getLogger(FeiraService.class);
+
 	private final FeiraRepository repository;
 
 	public FeiraService(FeiraRepository repository) {
@@ -20,10 +24,15 @@ public class FeiraService {
 	}
 
 	public Long create(FeiraCreateAndUpdateDTO feiraDto) throws Exception {
-			
 		try {
+			LOG.trace("Entrou no metodo create");
+
 			Feira feira = new Feira(feiraDto);
-			return repository.save(feira).getId();
+			Long id = repository.save(feira).getId();
+
+			LOG.trace("Finalizou o metodo create");
+			return id;
+
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
@@ -31,6 +40,8 @@ public class FeiraService {
 
 	public Feira update(FeiraCreateAndUpdateDTO feira, Long id) throws Exception {
 		try {
+			LOG.trace("Entrou no metodo update");
+
 			Feira feiraDb = getById(id);
 			feiraDb.setLongitude(feira.getLongitude());
 			feiraDb.setLatitude(feira.getLatitude());
@@ -49,34 +60,44 @@ public class FeiraService {
 			feiraDb.setBairro(feira.getBairro());
 			feiraDb.setReferencia(feira.getReferencia());
 
-			return repository.save(feiraDb);
+			Feira feiraResp = repository.save(feiraDb);
+
+			LOG.trace("Finalizou o metodo update");
+
+			return feiraResp;
+
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
 	}
 
 	public List<Feira> getByNomeFeira(String nomeFeira) throws Exception {
+		LOG.trace("Entrou no metodo getByNomeFeira");
 		try {
 			List<Feira> feira = repository.findByNomeFeira(nomeFeira);
 			if (!feira.isEmpty()) {
+				LOG.trace("Finalizou o metodo getByNomeFeira");
 				return feira;
 			} else {
-				throw new Exception("Feira não encontrada!");
+				throw new Exception("Feira livre não encontrada!");
 			}
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
 	}
-	
+
 	public void delete(Long id) throws Exception {
 		try {
+			LOG.trace("Entrou no metodo delete");
 			repository.deleteById(id);
+			LOG.trace("Finalizou o metodo delete");
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
 		}
 	}
 
 	public Feira getById(Long id) {
+		LOG.trace("Entrou no metodo getById");
 		return repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 	}
 }
