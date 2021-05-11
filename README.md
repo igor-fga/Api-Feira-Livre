@@ -37,7 +37,7 @@ Esse projeto tem como objetivo criação, edição, busca e deleção de feiras 
   
   5- Entre no Package **br.gov.sp.prefeitura.feira** e clique na classe Java **FeiraApplication** e clique em **Run**.
   
-  6- Os serviços podem ser testados utilizando o swagger no endereço *http://localhost:8080/swagger-ui/index.html*
+  6- Os serviços podem ser testados utilizando o swagger no endereço *http://localhost:8080/swagger-ui.html*
   
   7 - O serviço também pode ser testado pela collection do postman **Api - Feira Livre.postman_collection.json** diponível na pasta raiz do projeto.
   
@@ -45,4 +45,9 @@ Esse projeto tem como objetivo criação, edição, busca e deleção de feiras 
  
 ## Logs da API
 
-- Na pasta raiz do projeto **ApiFeiraLivre** é gravado os logs no arquivo **Feira-livre-log.txt**.
+Na pasta raiz do projeto **ApiFeiraLivre** é gravado os logs no arquivo **Feira-livre-log.txt**.
+
+## Cobertura de testes JUNIT
+
+![Imagem Junit](Images/junit.png)
+
