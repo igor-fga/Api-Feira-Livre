@@ -28,13 +28,13 @@ public class FeiraService {
 			LOG.trace("Entrou no metodo create");
 
 			Feira feira = new Feira(feiraDto);
-			Long id = repository.save(feira).getId();
+			Feira feiraRes = repository.save(feira);
 
 			LOG.trace("Finalizou o metodo create");
-			return id;
+			return feiraRes.getId();
 
 		} catch (Exception e) {
-			throw new Exception(e.getMessage());
+			throw new Exception("Error:" + e.getMessage());
 		}
 	}
 
@@ -67,7 +67,7 @@ public class FeiraService {
 			return feiraResp;
 
 		} catch (Exception e) {
-			throw new Exception(e.getMessage());
+			throw new Exception("Error:" + e.getMessage());
 		}
 	}
 
@@ -82,17 +82,18 @@ public class FeiraService {
 				throw new Exception("Feira livre não encontrada!");
 			}
 		} catch (Exception e) {
-			throw new Exception(e.getMessage());
+			throw new Exception("Error:" + e.getMessage());
 		}
 	}
 
 	public void delete(Long id) throws Exception {
 		try {
 			LOG.trace("Entrou no metodo delete");
+			repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 			repository.deleteById(id);
 			LOG.trace("Finalizou o metodo delete");
 		} catch (Exception e) {
-			throw new Exception(e.getMessage());
+			throw new Exception("Error:" + e.getMessage());
 		}
 	}
 
